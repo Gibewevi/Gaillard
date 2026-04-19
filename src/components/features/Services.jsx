@@ -10,7 +10,7 @@ const Services = () => (
     </div>
     <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
       {services.map((s, i) => (
-        <ServiceCard key={i} icon={s.icon} title={s.title} description={s.description} />
+        <ServiceCard key={i} icon={s.icon} title={s.title} description={s.description} slug={s.slug} />
       ))}
     </div>
   </section>
