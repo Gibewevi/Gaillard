@@ -1,0 +1,85 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-primary: #1a1a14;
+  --color-brand-secondary: #d4af37;
+
+  /* Gold Palette */
+  --color-gold-light: #F9E27E;
+  --color-gold-medium: #D4AF37;
+  --color-gold-dark: #C5A028;
+  --color-gold-deep: #B8860B;
+
+  /* Premium Palette */
+  --color-premium-black: #050505;
+  --color-premium-midnight: #0a0a0c;
+
+  /* Fonts */
+  --font-serif: 'Playfair Display', serif;
+  --font-script: 'Great Vibes', cursive;
+}
+
+:root {
+  font-family: 'Playfair Display', serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #050505;
+  color: #fdfdfd;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.shimmer-effect {
+  position: relative;
+  overflow: hidden;
+}
+
+.shimmer-effect::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  animation: shimmer 2s infinite;
+}
+
+.text-gradient {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-gold-light to-gold-deep;
+}
+
+.glass {
+  @apply bg-black/40 backdrop-blur-md border-b border-gold-dark/30;
+}
+
+.card-shadow {
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5), 0 8px 10px -6px rgba(0, 0, 0, 0.3);
+}
